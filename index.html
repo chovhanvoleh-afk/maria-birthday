@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#100d09" />
+  <meta name="description" content="Birthday Dinner — 22 жовтня 2026 о 18:00, LIS REST, Івано-Франківськ." />
+  <title>Birthday Dinner · Maria</title>
+  <style>
+    :root {
+      --black: #100d09;
+      --cream: #f4ead9;
+      --gold: #e8c78b;
+      --muted-gold: #b99a69;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 54px 22px 42px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12,9,6,.34) 0%, rgba(12,9,6,.26) 32%, rgba(12,9,6,.82) 75%, #100d09 100%),
+        url("maria-photo.jpg") center 38% / cover no-repeat;
+      z-index: -2;
+      transform: scale(1.015);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(232,199,139,.5);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      margin: 0 0 28px;
+    }
+    h1 {
+      color: var(--gold);
+      font-size: clamp(58px, 14vw, 108px);
+      line-height: .82;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: -.065em;
+      margin: 0;
+      text-shadow: 0 2px 22px rgba(0,0,0,.2);
+    }
+    h1 span { display: block; }
+    .subtitle {
+      font-size: 11px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin: 30px 0 32px;
+    }
+    .divider {
+      width: 1px;
+      height: 48px;
+      background: var(--gold);
+      margin: 0 auto 30px;
+    }
+    .details {
+      width: min(100%, 560px);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 34px;
+    }
+    .detail {
+      padding: 4px 10px 8px;
+      border-right: 1px solid rgba(232,199,139,.45);
+    }
+    .detail:last-child { border-right: 0; }
+    .label {
+      font-size: 10px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .value {
+      color: var(--cream);
+      font-size: clamp(19px, 5vw, 27px);
+      margin-bottom: 8px;
+    }
+    .subvalue {
+      font-size: 11px;
+      letter-spacing: .18em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
+    .actions {
+      width: min(100%, 560px);
+      display: grid;
+      gap: 14px;
+    }
+    .btn {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary {
+      background: var(--cream);
+      color: var(--black);
+      border-color: var(--cream);
+    }
+    .venue {
+      padding: 72px 24px 30px;
+      text-align: center;
+      background: var(--black);
+    }
+    .venue-mark {
+      color: var(--gold);
+      font-size: clamp(58px, 15vw, 86px);
+      letter-spacing: .18em;
+      margin-left: .18em;
+      line-height: 1;
+    }
+    .venue-sub {
+      font-size: 13px;
+      letter-spacing: .7em;
+      margin: 14px 0 26px .7em;
+    }
+    .venue p {
+      color: #c9baa4;
+      line-height: 1.8;
+      font-size: 17px;
+      max-width: 420px;
+      margin: 0 auto 24px;
+    }
+    .closing {
+      background: var(--cream);
+      color: var(--black);
+      text-align: center;
+      padding: 54px 24px 66px;
+    }
+    .closing p {
+      font-size: 12px;
+      letter-spacing: .2em;
+      line-height: 2;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .heart {
+      color: var(--muted-gold);
+      font-size: 35px;
+      margin-top: 22px;
+    }
+    footer {
+      background: var(--cream);
+      color: #6e5b42;
+      text-align: center;
+      padding: 0 18px 22px;
+      font-size: 10px;
+      letter-spacing: .15em;
+    }
+    @media (min-width: 760px) {
+      .hero { min-height: 920px; }
+      .hero::before { background-position: center 32%; }
+    }
+    @media (max-width: 380px) {
+      .detail { padding-left: 4px; padding-right: 4px; }
+      .subvalue { letter-spacing: .1em; font-size: 9px; }
+      .label { font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-label="Birthday invitation">
+      <p class="eyebrow">You’re invited</p>
+      <h1><span>Birthday</span><span>Dinner</span></h1>
+      <p class="subtitle">An evening to celebrate</p>
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="details">
+        <div class="detail">
+          <div class="label">Date</div>
+          <div class="value">22</div>
+          <div class="subvalue">Жовтня<br>2026</div>
+        </div>
+        <div class="detail">
+          <div class="label">Time</div>
+          <div class="value">18:00</div>
+          <div class="subvalue">Четвер</div>
+        </div>
+        <div class="detail">
+          <div class="label">Place</div>
+          <div class="value">LIS REST</div>
+          <div class="subvalue">Івано-Франківськ</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" id="calendar-link" href="#" target="_blank" rel="noopener">
+          ＋ &nbsp; Додати в календар
+        </a>
+        <a class="btn" href="https://www.instagram.com/lis_rest_if/" target="_blank" rel="noopener">
+          Instagram LIS REST ↗
+        </a>
+      </div>
+    </section>
+
+    <section class="venue">
+      <div class="venue-mark">LIS</div>
+      <div class="venue-sub">REST</div>
+      <p>Місце зустрічі — LIS REST<br>Івано-Франківськ</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=LIS+REST+Ivano-Frankivsk" target="_blank" rel="noopener">
+        Відкрити на Google Maps ↗
+      </a>
+    </section>
+
+    <section class="closing">
+      <p>Буду дуже рада бачити вас<br>у цей особливий вечір</p>
+      <div class="heart" aria-hidden="true">♡</div>
+    </section>
+    <footer>MARIA · BIRTHDAY DINNER · 22.10.2026</footer>
+  </main>
+
+  <script>
+    // Google Calendar event: 22 October 2026, 18:00–21:00, Kyiv time.
+    const eventTitle = "Birthday Dinner — Maria · LIS REST";
+    const start = "20261022T150000Z"; // 18:00 in Kyiv (UTC+3)
+    const end = "20261022T180000Z";   // 21:00 in Kyiv (UTC+3)
+    const details = "Birthday dinner at LIS REST, Ivano-Frankivsk.";
+    const location = "LIS REST, Ivano-Frankivsk, Ukraine";
+    const calendarUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+      + "&text=" + encodeURIComponent(eventTitle)
+      + "&dates=" + start + "/" + end
+      + "&details=" + encodeURIComponent(details)
+      + "&location=" + encodeURIComponent(location);
+    document.getElementById("calendar-link").href = calendarUrl;
+  </script>
+</body>
+</html>
